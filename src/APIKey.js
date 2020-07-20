@@ -1,3 +1,1 @@
-module.exports = {
-  APIKey: '92d74624',
-};
+export const APIKey = '92d74624';

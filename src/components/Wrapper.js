@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchForm from './SearchForm';
+import SearchForm from '../containers/SearchForm';
 
 const Wrapper = () => (
   <div className="container">

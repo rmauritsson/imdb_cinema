@@ -9,3 +9,9 @@
 .navbar {
   border-bottom: 1px solid #eee;
 }
+
+.jumbotron {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { searchMovie, fetchMovies } from '../actions';
 
 class SearchForm extends React.Component {
   handleChange = e => {
-    this.props.searchMovie(e.target.value);
+    const { searchMovie } = this.props;
+    const { value } = e.target;
+    searchMovie(value);
   }
 
   handleSubmit = e => {
-    console.log('Clicked');
+    const { fetchMovies, text } = this.props;
     e.preventDefault();
-    this.props.fetchMovies(this.props.text);
+    fetchMovies(text);
   }
 
   render() {
@@ -37,6 +40,18 @@ class SearchForm extends React.Component {
     );
   }
 }
+
+SearchForm.propTypes = {
+  searchMovie: PropTypes.func,
+  fetchMovies: PropTypes.func,
+  text: PropTypes.string,
+};
+
+SearchForm.defaultProps = {
+  searchMovie: () => {},
+  fetchMovies: () => {},
+  text: '',
+};
 
 const mapStateToProps = state => ({
   text: state.movies.text,

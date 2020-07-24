@@ -10,8 +10,7 @@ class SearchForm extends React.Component {
   handleSubmit = e => {
     console.log('Clicked');
     e.preventDefault();
-    this.props.fetchMovies(this.props.text)
-    console.log('Clicked Again');
+    this.props.fetchMovies(this.props.text);
   }
 
   render() {

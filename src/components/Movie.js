@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Movie = ({ movie }) => (
   <div className="col-md-3 mb-5">
@@ -10,6 +11,7 @@ const Movie = ({ movie }) => (
         -
         {movie.Year}
       </h5>
+      <Link className="btn btn-primary" to={`/movie/${movie.imdbID}`}>Movie Details</Link>
     </div>
   </div>
 );

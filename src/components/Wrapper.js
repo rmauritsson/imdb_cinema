@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import SearchForm from '../containers/SearchForm';
 import MoviesContainer from '../containers/MoviesContainer';
 import Spinner from './Spinner';
 
 const Wrapper = ({ loading }) => (
-  <div className="container">
-    <SearchForm />
+  <div className="container mt-5">
     { loading ? <Spinner /> : <MoviesContainer /> }
   </div>
 );

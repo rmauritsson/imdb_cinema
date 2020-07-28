@@ -19,25 +19,10 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <div className="jumbotron jumbotron-fluid">
-        <div className="container">
-          <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          <form onSubmit={this.handleSubmit}>
-            <div className="col-auto">
-              <input
-                type="text"
-                onChange={this.handleChange}
-                className="form-control mb-2"
-                placeholder="Type in movie to search"
-                required
-              />
-            </div>
-            <div className="col-auto">
-              <button type="submit" className="btn btn-primary mb-2">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <form onSubmit={this.handleSubmit} className="form-inline my-2 my-lg-0">
+        <input onChange={this.handleChange} className="form-control mr-sm-2" type="search" placeholder="Type movie/series to Search" aria-label="Search" />
+        <button className="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+      </form>
     );
   }
 }
@@ -46,12 +31,14 @@ SearchForm.propTypes = {
   searchMovie: PropTypes.func,
   fetchMovies: PropTypes.func,
   text: PropTypes.string,
+  setLoading: PropTypes.bool,
 };
 
 SearchForm.defaultProps = {
   searchMovie: () => {},
   fetchMovies: () => {},
   text: '',
+  setLoading: false,
 };
 
 const mapStateToProps = state => ({
